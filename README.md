@@ -19,7 +19,7 @@ Issue closed and code pushed: Nov 1, 1:10pm
 
 Please push your final changes to your repo by *Monday class (Oct 28, 1:10pm)*. 
 
-On Friday, you'll be assigned a repo at random. Clone the repo, review the code, and choose one of the two issues to work on and close by adding a function to the feature engineering notebook. Use an assert to test that the function is operating as intended. In the space provided below, award points based on the number of questions you needed to ask the repo owner to complete your work. Please make your commit and push by *Friday class (Nov 1, 1:10pm)*. 
+On Friday, you'll be assigned a repo at random. Clone the repo, review the code, and choose one of the two issues to work on and close by adding a function to the feature engineering notebook. Use an assert to test that the function is operating as intended. Please make your commit and push by *Friday class (Nov 1, 1:10pm)*. You will receive a survey asking how many questions you needed to ask the repo originator in order to create a working function.  
 
 ## Grading
 
@@ -28,7 +28,9 @@ The midterm project will be worth 30% of your overall course grade.
 Out of 100 points total:
 
 /20 Repo structure
-/40 Coding best practices 
+
+/40 Coding best practices (in your repo and in your function closing the issue) 
+
 /40 Teammate score: number of questions required 
 - 40 -- no questions needed to be asked
 - 36 -- one question
