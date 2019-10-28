@@ -3,8 +3,9 @@ title: "40-modelling"
 output: html_notebook
 ---
 
-## Test
-```{r}
+## Prepare data for modelling
+
+```{r prepare data}
 dest_prepare <- dest %>% 
   calc_month(date_first_booking) %>%
   age_dummy(age) %>% 
@@ -16,14 +17,23 @@ dest_prepare
 
 ## Test with asserts/verifys
 
-```{r}
+```{r test function1}
 dest_prepare %>% 
   assert(in_set(NA,"January","February","March","April","May","June","July","August","September","October","November","December"),month)
 ```
 
 
-```{r}
+```{r test function2}
 dest_prepare %>% 
   assert(in_set(NA,0,1),age_under_40)
+```
+
+```{r test function3}
+
+```
+
+
+```{r test function4}
+
 ```
 

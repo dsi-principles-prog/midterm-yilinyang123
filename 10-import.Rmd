@@ -173,7 +173,7 @@ dest <- dest %>%
 
 **country destination**
 
-change country_destination to factor
+change country_destination to factor for a more efficient use of memory and it would be easier to implement for modelling since there are 12 levels for the target variable-country destination.
 
 ```{r change country destination to factor}
 dest <- dest %>% 

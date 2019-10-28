@@ -7,9 +7,9 @@ output: html_notebook
 
 Given a month, some countries are more likely to be visited owing to seasonality in terms of weather/festivals. The travel destination for different countries could depend on the month. Given a month, some countries are more likely to be visited owing to seasonality in terms of weather/festivals.
 
-input: date_first_booking
+input: data frame & variable
 
-output: the month of the date
+output: the month of the variable
 
 ```{r function1}
 calc_month <- function (df,var) {
@@ -28,9 +28,9 @@ hist(dest_new$age,xlab="age",main="histogram of user age")
 
 From this histogram, we could see that most user that actually booked a trip is under 40, thus we could add a dummy variable to indicate if the age is under 40 or not. Let 1 be age under 40 and 0 be age above 40.
 
-input: age
+input: data frame, variable
 
-output: 1(age under or equal 40); 0(age above 40)
+output: 1(variable under or equal 40); 0(variable above 40)
 
 ```{r function2}
 age_dummy <- function (df,var) {
@@ -44,10 +44,9 @@ age_dummy <- function (df,var) {
 
 The absence of date_first_booking means the destination is NDF(no destination found), thus we could add a column to indicate if there is a booking record. Then in prediction, we could eliminate the entries without booking record, and predicted the output, to be NDF.
 
-input: date first booking
+input: data frame, variable
 
-output: 1(with booking record); 0(without booking record)
-
+output: 1(variable is not NA); 0(variable is NA)
 
 ```{r function3}
 booking_record <- function (df,var) {
@@ -59,13 +58,13 @@ booking_record <- function (df,var) {
 
 **function 4**
 
-The date first booking on which day of week will also affect the travel destination. Let's set a function that given date first booking, returns the day of the week of the date.
+The date first booking on which day of the week will also affect the travel destination. Let's set a function that given date first booking, returns the day of the week of the date.
 
-input: date_first_booking
+input: data frame, variable
 
-output: the day of the week of the date
+output: the day of the week of the variable
 
-```{r}
+```{r function4}
 day_of_week <-function(df,var){
  
 }

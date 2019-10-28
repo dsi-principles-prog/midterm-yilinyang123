@@ -229,8 +229,8 @@ summary {
 <!-- rnb-text-begin -->
 <p><strong>function 1</strong></p>
 <p>Given a month, some countries are more likely to be visited owing to seasonality in terms of weather/festivals. The travel destination for different countries could depend on the month. Given a month, some countries are more likely to be visited owing to seasonality in terms of weather/festivals.</p>
-<p>input: date_first_booking</p>
-<p>output: the month of the date</p>
+<p>input: data frame &amp; variable</p>
+<p>output: the month of the variable</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FsY19tb250aCA8LSBmdW5jdGlvbiAoZGYsdmFyKSB7XG4gIGRmICU+JSBcbiAgICBtdXRhdGUobW9udGg9bW9udGhzKHt7dmFyfX0pKVxufVxuYGBgIn0= -->
@@ -254,8 +254,8 @@ hist(dest_new$age,xlab=&quot;age&quot;,main=&quot;histogram of user age&quot;)</
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>From this histogram, we could see that most user that actually booked a trip is under 40, thus we could add a dummy variable to indicate if the age is under 40 or not. Let 1 be age under 40 and 0 be age above 40.</p>
-<p>input: age</p>
-<p>output: 1(age under or equal 40); 0(age above 40)</p>
+<p>input: data frame, variable</p>
+<p>output: 1(variable under or equal 40); 0(variable above 40)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWdlX2R1bW15IDwtIGZ1bmN0aW9uIChkZix2YXIpIHtcbiAgZGYgJT4lIFxuICAgIG11dGF0ZShhZ2VfdW5kZXJfNDA9YXMuaW50ZWdlcih7e3Zhcn19IDw9NDApKVxufVxuYGBgIn0= -->
@@ -268,8 +268,8 @@ hist(dest_new$age,xlab=&quot;age&quot;,main=&quot;histogram of user age&quot;)</
 <!-- rnb-text-begin -->
 <p><strong>function 3</strong></p>
 <p>The absence of date_first_booking means the destination is NDF(no destination found), thus we could add a column to indicate if there is a booking record. Then in prediction, we could eliminate the entries without booking record, and predicted the output, to be NDF.</p>
-<p>input: date first booking</p>
-<p>output: 1(with booking record); 0(without booking record)</p>
+<p>input: data frame, variable</p>
+<p>output: 1(variable is not NA); 0(variable is NA)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm9va2luZ19yZWNvcmQgPC0gZnVuY3Rpb24gKGRmLHZhcikge1xuICBcbn1cblxuYGBgIn0= -->
@@ -281,9 +281,9 @@ hist(dest_new$age,xlab=&quot;age&quot;,main=&quot;histogram of user age&quot;)</
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p><strong>function 4</strong></p>
-<p>The date first booking on which day of week will also affect the travel destination. Let’s set a function that given date first booking, returns the day of the week of the date.</p>
-<p>input: date_first_booking</p>
-<p>output: the day of the week of the date</p>
+<p>The date first booking on which day of the week will also affect the travel destination. Let’s set a function that given date first booking, returns the day of the week of the date.</p>
+<p>input: data frame, variable</p>
+<p>output: the day of the week of the variable</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF5X29mX3dlZWsgPC1mdW5jdGlvbihkZix2YXIpe1xuIFxufVxuXG5gYGAifQ== -->
@@ -294,7 +294,7 @@ hist(dest_new$age,xlab=&quot;age&quot;,main=&quot;histogram of user age&quot;)</
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzAtZmVhdHVyZS1lbmdpbmVlcmluZyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKKipmdW5jdGlvbiAxKioKCkdpdmVuIGEgbW9udGgsIHNvbWUgY291bnRyaWVzIGFyZSBtb3JlIGxpa2VseSB0byBiZSB2aXNpdGVkIG93aW5nIHRvIHNlYXNvbmFsaXR5IGluIHRlcm1zIG9mIHdlYXRoZXIvZmVzdGl2YWxzLiBUaGUgdHJhdmVsIGRlc3RpbmF0aW9uIGZvciBkaWZmZXJlbnQgY291bnRyaWVzIGNvdWxkIGRlcGVuZCBvbiB0aGUgbW9udGguIEdpdmVuIGEgbW9udGgsIHNvbWUgY291bnRyaWVzIGFyZSBtb3JlIGxpa2VseSB0byBiZSB2aXNpdGVkIG93aW5nIHRvIHNlYXNvbmFsaXR5IGluIHRlcm1zIG9mIHdlYXRoZXIvZmVzdGl2YWxzLgoKaW5wdXQ6IGRhdGVfZmlyc3RfYm9va2luZwoKb3V0cHV0OiB0aGUgbW9udGggb2YgdGhlIGRhdGUKCmBgYHtyIGZ1bmN0aW9uMX0KY2FsY19tb250aCA8LSBmdW5jdGlvbiAoZGYsdmFyKSB7CiAgZGYgJT4lIAogICAgbXV0YXRlKG1vbnRoPW1vbnRocyh7e3Zhcn19KSkKfQoKYGBgCgoqKmZ1bmN0aW9uIDIqKgoKYGBge3IgaGlzdG9ncmFtIG9mIGFnZX0KZGVzdF9uZXcgPC0gZGVzdFshaXMubmEoZGVzdCRkYXRlX2ZpcnN0X2Jvb2tpbmcpICYgZGVzdCRhZ2U8MTIwICYgIWlzLm5hKGRlc3QkYWdlKSxdCmhpc3QoZGVzdF9uZXckYWdlLHhsYWI9ImFnZSIsbWFpbj0iaGlzdG9ncmFtIG9mIHVzZXIgYWdlIikKYGBgCgpGcm9tIHRoaXMgaGlzdG9ncmFtLCB3ZSBjb3VsZCBzZWUgdGhhdCBtb3N0IHVzZXIgdGhhdCBhY3R1YWxseSBib29rZWQgYSB0cmlwIGlzIHVuZGVyIDQwLCB0aHVzIHdlIGNvdWxkIGFkZCBhIGR1bW15IHZhcmlhYmxlIHRvIGluZGljYXRlIGlmIHRoZSBhZ2UgaXMgdW5kZXIgNDAgb3Igbm90LiBMZXQgMSBiZSBhZ2UgdW5kZXIgNDAgYW5kIDAgYmUgYWdlIGFib3ZlIDQwLgoKaW5wdXQ6IGFnZQoKb3V0cHV0OiAxKGFnZSB1bmRlciBvciBlcXVhbCA0MCk7IDAoYWdlIGFib3ZlIDQwKQoKYGBge3IgZnVuY3Rpb24yfQphZ2VfZHVtbXkgPC0gZnVuY3Rpb24gKGRmLHZhcikgewogIGRmICU+JSAKICAgIG11dGF0ZShhZ2VfdW5kZXJfNDA9YXMuaW50ZWdlcih7e3Zhcn19IDw9NDApKQp9CgpgYGAKCioqZnVuY3Rpb24gMyoqCgpUaGUgYWJzZW5jZSBvZiBkYXRlX2ZpcnN0X2Jvb2tpbmcgbWVhbnMgdGhlIGRlc3RpbmF0aW9uIGlzIE5ERihubyBkZXN0aW5hdGlvbiBmb3VuZCksIHRodXMgd2UgY291bGQgYWRkIGEgY29sdW1uIHRvIGluZGljYXRlIGlmIHRoZXJlIGlzIGEgYm9va2luZyByZWNvcmQuIFRoZW4gaW4gcHJlZGljdGlvbiwgd2UgY291bGQgZWxpbWluYXRlIHRoZSBlbnRyaWVzIHdpdGhvdXQgYm9va2luZyByZWNvcmQsIGFuZCBwcmVkaWN0ZWQgdGhlIG91dHB1dCwgdG8gYmUgTkRGLgoKaW5wdXQ6IGRhdGUgZmlyc3QgYm9va2luZwoKb3V0cHV0OiAxKHdpdGggYm9va2luZyByZWNvcmQpOyAwKHdpdGhvdXQgYm9va2luZyByZWNvcmQpCgoKYGBge3IgZnVuY3Rpb24zfQpib29raW5nX3JlY29yZCA8LSBmdW5jdGlvbiAoZGYsdmFyKSB7CiAgCn0KCmBgYAoKCioqZnVuY3Rpb24gNCoqCgpUaGUgZGF0ZSBmaXJzdCBib29raW5nIG9uIHdoaWNoIGRheSBvZiB3ZWVrIHdpbGwgYWxzbyBhZmZlY3QgdGhlIHRyYXZlbCBkZXN0aW5hdGlvbi4gTGV0J3Mgc2V0IGEgZnVuY3Rpb24gdGhhdCBnaXZlbiBkYXRlIGZpcnN0IGJvb2tpbmcsIHJldHVybnMgdGhlIGRheSBvZiB0aGUgd2VlayBvZiB0aGUgZGF0ZS4KCmlucHV0OiBkYXRlX2ZpcnN0X2Jvb2tpbmcKCm91dHB1dDogdGhlIGRheSBvZiB0aGUgd2VlayBvZiB0aGUgZGF0ZQoKYGBge3J9CmRheV9vZl93ZWVrIDwtZnVuY3Rpb24oZGYsdmFyKXsKIAp9CgpgYGA=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzAtZmVhdHVyZS1lbmdpbmVlcmluZyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKKipmdW5jdGlvbiAxKioKCkdpdmVuIGEgbW9udGgsIHNvbWUgY291bnRyaWVzIGFyZSBtb3JlIGxpa2VseSB0byBiZSB2aXNpdGVkIG93aW5nIHRvIHNlYXNvbmFsaXR5IGluIHRlcm1zIG9mIHdlYXRoZXIvZmVzdGl2YWxzLiBUaGUgdHJhdmVsIGRlc3RpbmF0aW9uIGZvciBkaWZmZXJlbnQgY291bnRyaWVzIGNvdWxkIGRlcGVuZCBvbiB0aGUgbW9udGguIEdpdmVuIGEgbW9udGgsIHNvbWUgY291bnRyaWVzIGFyZSBtb3JlIGxpa2VseSB0byBiZSB2aXNpdGVkIG93aW5nIHRvIHNlYXNvbmFsaXR5IGluIHRlcm1zIG9mIHdlYXRoZXIvZmVzdGl2YWxzLgoKaW5wdXQ6IGRhdGEgZnJhbWUgJiB2YXJpYWJsZQoKb3V0cHV0OiB0aGUgbW9udGggb2YgdGhlIHZhcmlhYmxlCgpgYGB7ciBmdW5jdGlvbjF9CmNhbGNfbW9udGggPC0gZnVuY3Rpb24gKGRmLHZhcikgewogIGRmICU+JSAKICAgIG11dGF0ZShtb250aD1tb250aHMoe3t2YXJ9fSkpCn0KCmBgYAoKKipmdW5jdGlvbiAyKioKCmBgYHtyIGhpc3RvZ3JhbSBvZiBhZ2V9CmRlc3RfbmV3IDwtIGRlc3RbIWlzLm5hKGRlc3QkZGF0ZV9maXJzdF9ib29raW5nKSAmIGRlc3QkYWdlPDEyMCAmICFpcy5uYShkZXN0JGFnZSksXQpoaXN0KGRlc3RfbmV3JGFnZSx4bGFiPSJhZ2UiLG1haW49Imhpc3RvZ3JhbSBvZiB1c2VyIGFnZSIpCmBgYAoKRnJvbSB0aGlzIGhpc3RvZ3JhbSwgd2UgY291bGQgc2VlIHRoYXQgbW9zdCB1c2VyIHRoYXQgYWN0dWFsbHkgYm9va2VkIGEgdHJpcCBpcyB1bmRlciA0MCwgdGh1cyB3ZSBjb3VsZCBhZGQgYSBkdW1teSB2YXJpYWJsZSB0byBpbmRpY2F0ZSBpZiB0aGUgYWdlIGlzIHVuZGVyIDQwIG9yIG5vdC4gTGV0IDEgYmUgYWdlIHVuZGVyIDQwIGFuZCAwIGJlIGFnZSBhYm92ZSA0MC4KCmlucHV0OiBkYXRhIGZyYW1lLCB2YXJpYWJsZQoKb3V0cHV0OiAxKHZhcmlhYmxlIHVuZGVyIG9yIGVxdWFsIDQwKTsgMCh2YXJpYWJsZSBhYm92ZSA0MCkKCmBgYHtyIGZ1bmN0aW9uMn0KYWdlX2R1bW15IDwtIGZ1bmN0aW9uIChkZix2YXIpIHsKICBkZiAlPiUgCiAgICBtdXRhdGUoYWdlX3VuZGVyXzQwPWFzLmludGVnZXIoe3t2YXJ9fSA8PTQwKSkKfQoKYGBgCgoqKmZ1bmN0aW9uIDMqKgoKVGhlIGFic2VuY2Ugb2YgZGF0ZV9maXJzdF9ib29raW5nIG1lYW5zIHRoZSBkZXN0aW5hdGlvbiBpcyBOREYobm8gZGVzdGluYXRpb24gZm91bmQpLCB0aHVzIHdlIGNvdWxkIGFkZCBhIGNvbHVtbiB0byBpbmRpY2F0ZSBpZiB0aGVyZSBpcyBhIGJvb2tpbmcgcmVjb3JkLiBUaGVuIGluIHByZWRpY3Rpb24sIHdlIGNvdWxkIGVsaW1pbmF0ZSB0aGUgZW50cmllcyB3aXRob3V0IGJvb2tpbmcgcmVjb3JkLCBhbmQgcHJlZGljdGVkIHRoZSBvdXRwdXQsIHRvIGJlIE5ERi4KCmlucHV0OiBkYXRhIGZyYW1lLCB2YXJpYWJsZQoKb3V0cHV0OiAxKHZhcmlhYmxlIGlzIG5vdCBOQSk7IDAodmFyaWFibGUgaXMgTkEpCgpgYGB7ciBmdW5jdGlvbjN9CmJvb2tpbmdfcmVjb3JkIDwtIGZ1bmN0aW9uIChkZix2YXIpIHsKICAKfQoKYGBgCgoKKipmdW5jdGlvbiA0KioKClRoZSBkYXRlIGZpcnN0IGJvb2tpbmcgb24gd2hpY2ggZGF5IG9mIHRoZSB3ZWVrIHdpbGwgYWxzbyBhZmZlY3QgdGhlIHRyYXZlbCBkZXN0aW5hdGlvbi4gTGV0J3Mgc2V0IGEgZnVuY3Rpb24gdGhhdCBnaXZlbiBkYXRlIGZpcnN0IGJvb2tpbmcsIHJldHVybnMgdGhlIGRheSBvZiB0aGUgd2VlayBvZiB0aGUgZGF0ZS4KCmlucHV0OiBkYXRhIGZyYW1lLCB2YXJpYWJsZQoKb3V0cHV0OiB0aGUgZGF5IG9mIHRoZSB3ZWVrIG9mIHRoZSB2YXJpYWJsZQoKYGBge3IgZnVuY3Rpb240fQpkYXlfb2Zfd2VlayA8LWZ1bmN0aW9uKGRmLHZhcil7CiAKfQoKYGBg</div>
 
 
 
