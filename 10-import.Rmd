@@ -14,7 +14,7 @@ library(janitor)
 ## Load data
 
 ```{r load data}
-dest <- read_csv("train_users_2.csv")
+dest <- read_csv("train_users_2.csv") %>% clean_names()
 ```
 
 ## Describe data
@@ -93,7 +93,7 @@ For "-unknown", it should be considered as missing values in gender
 
 ```{r NA in date first booking}
 dest %>%
-  verify(!is.na(date_first_booking))
+  verify(not_na(date_first_booking))
 ```
 
 There are 124,543 NA in date_first_booking. Thus, about 58% users didn't book a trip to any destination yet.
@@ -134,7 +134,7 @@ dest <- dest %>%
 
 **gender**
 
-change all the "-unknown" in gender to NA
+There are four unique values in gender, '-unknown-', 'MALE', 'FEMALE', 'OTHER'. '-unknown-' represents missing values in **gender**. Thus, let's change all the "-unknown" in gender to NA so it would be easier when we want to exclude missiing values from analysis or use various functions in R for dealing with missing values.
 
 ```{r modify gender}
 dest <- dest %>% 
@@ -144,7 +144,7 @@ dest <- dest %>%
 
 **signup method**
 
-change signup method to factor and convert from category to numeric
+change signup method to factor and convert from category to numeric. In this way, they can be used in statistical modeling where they will be implemented correctly, i.e., they will then be assigned the correct number of degrees of freedom. Besides, storing string variables as factor variables is a more efficient use of memory.
 
 ```{r change signup method to factor}
 dest <- dest %>% 
@@ -155,7 +155,7 @@ Thus, in the factor, basic is set to be 1, facebook is set to be 2 and google is
 
 **language**
 
-change language to factor
+change language to factor for a more efficient use of memory and it would be easier to implement for modelling.
 
 ```{r change language method to factor}
 dest <- dest %>% 
@@ -164,7 +164,7 @@ dest <- dest %>%
 
 **first browser**
 
-change all the "-unknown-" in first browser to NA
+change all the "-unknown-" in first browser to NA so it would be easier when we want to exclude missiing values from analysis or use various functions in R for dealing with missing values.
 
 ```{r modify first browser}
 dest <- dest %>% 

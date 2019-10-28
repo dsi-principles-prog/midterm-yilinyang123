@@ -19,27 +19,7 @@ calc_month <- function (df,var) {
 
 ```
 
-
 **function 2**
-The absence of date_first_booking means the destination is NDF(no destination found), thus we could add a column to indicate if there is a booking record. Then in prediction, we could eliminate the entries without booking record, and predicted the output, to be NDF.
-
-input: date first booking
-
-output: 1(with booking record)
-        0(without booking record)
-
-```{r function2}
-booking_record <- function (df,var) {
-  df %>% 
-    mutate(booking_or_not=case_when(
-      is.na({{var}}) ~ 0,
-      TRUE ~ 1)
-    ) 
-}
-
-```
-
-**function 3**
 
 ```{r histogram of age}
 dest_new <- dest[!is.na(dest$date_first_booking) & dest$age<120 & !is.na(dest$age),]
@@ -48,22 +28,46 @@ hist(dest_new$age,xlab="age",main="histogram of user age")
 
 From this histogram, we could see that most user that actually booked a trip is under 40, thus we could add a dummy variable to indicate if the age is under 40 or not. Let 1 be age under 40 and 0 be age above 40.
 
-```{r function3}
+input: age
+
+output: 1(age under or equal 40); 0(age above 40)
+
+```{r function2}
 age_dummy <- function (df,var) {
+  df %>% 
+    mutate(age_under_40=as.integer({{var}} <=40))
+}
+
+```
+
+**function 3**
+
+The absence of date_first_booking means the destination is NDF(no destination found), thus we could add a column to indicate if there is a booking record. Then in prediction, we could eliminate the entries without booking record, and predicted the output, to be NDF.
+
+input: date first booking
+
+output: 1(with booking record); 0(without booking record)
+
+
+```{r function3}
+booking_record <- function (df,var) {
   
 }
 
 ```
 
+
 **function 4**
 
-The date first booking on which day of week will also affect the travel destination. Let's set a function that given date first booking, returns the day of the week you were born on.\
-The
+The date first booking on which day of week will also affect the travel destination. Let's set a function that given date first booking, returns the day of the week of the date.
+
+input: date_first_booking
+
+output: the day of the week of the date
 
 ```{r}
 day_of_week <-function(df,var){
  
 }
-
 
 ```
