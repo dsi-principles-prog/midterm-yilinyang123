@@ -28,22 +28,23 @@ The training data had the demographic and session information for 213451 users. 
 ```{r variable names}
 names(dest)
 ```
+**Description of Variables**
 
-date_account_created: the date of account creation
+**date_account_created**: the date of account creation
 
-timestamp_first_active: timestamp of the first activity, note that it can be earlier than date_account_created or date_first_booking because a user can search before signing up
+**timestamp_first_active**: timestamp of the first activity, note that it can be earlier than date_account_created or date_first_booking because a user can search before signing up
 
-date_first_booking: date of first booking
+**date_first_booking**: date of first booking for the user
 
-signup_flow: the page a user came to signup up from
+**signup_flow**: the page a user came to signup up from
 
-language: international language preference
+**language**: international language preference
 
-affiliate_channel: what kind of paid marketing
+**affiliate_channel**: what kind of paid marketing
 
-affiliate_provider: where the marketing is e.g. google, craigslist, other
+**affiliate_provider**: where the marketing is e.g. google, craigslist, other
 
-first_affiliate_tracked: whats the first marketing the user interacted with before the signing up
+**first_affiliate_tracked**: whats the first marketing the user interacted with before the signing up
 
 country_destination: the target variable to predict
 
@@ -109,7 +110,7 @@ The number of users whose country destination is "NDF" is 124543, which is consi
 
 ```{r NA in age}
 dest %>%
-  verify(!is.na(age))
+  verify(not_na(age))
 ```
 
 There are 87990 missing values in age.
