@@ -46,7 +46,7 @@ names(dest)
 
 **first_affiliate_tracked**: whats the first marketing the user interacted with before the signing up
 
-country_destination: the target variable to predict
+**country_destination**: the target variable to predict
 
 ```{r first device type}
 dest %>% 

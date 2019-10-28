@@ -12,7 +12,10 @@ dest_prepare <- dest %>%
   #booking_record(date_first_booking) %>%
   #day_of_week(date_first_booking) %>%
   select(country_destination,id,month,age_under_40,gender,signup_method,language,first_browser)
+
 dest_prepare
+
+write.csv(dest_prepare,"dest_prepare.csv")
 ```
 
 ## Test with asserts/verifys
