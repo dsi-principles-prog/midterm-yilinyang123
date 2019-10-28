@@ -1,0 +1,30 @@
+---
+title: "40-modelling"
+output: html_notebook
+---
+
+## Test
+```{r}
+dest_prepare <- dest %>% 
+  calc_month(date_first_booking) %>%
+  booking_record(date_first_booking) %>%
+  #age_dummy(age) %>% 
+  #day_of_week(date_first_booking) %>%
+  select(country_destination,id,month,booking_or_not,gender,signup_method,language,first_browser)
+
+dest_prepare
+```
+
+## Test with asserts/verifys
+
+```{r}
+dest_prepare %>% 
+  assert(in_set(NA,"January","February","March","April","May","June","July","August","September","October","November","December"),month)
+```
+
+
+```{r}
+dest_prepare %>% 
+  assert(in_set(0,1),booking_or_not)
+```
+
