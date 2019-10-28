@@ -5,7 +5,7 @@
 All the users in this dataset are from the USA.
 
 **Target Variable** - "country_destination"\
-there are 12 possible outcomes of the destination country: 'US'-USA, 'FR'-France, 'CA'-Canada, 'GB'-Great Britain, 'ES'-Spain, 'IT'-Italy, 'PT'-Portugal, 'NL'-Netherlands,'DE'-Denmark, 'AU'-Australia, 'NDF' (no destination found), and 'other'. 
+There are 12 possible outcomes of the destination country: 'US'-USA, 'FR'-France, 'CA'-Canada, 'GB'-Great Britain, 'ES'-Spain, 'IT'-Italy, 'PT'-Portugal, 'NL'-Netherlands,'DE'-Denmark, 'AU'-Australia, 'NDF' (no destination found), and 'other'. 
 
 **Predictor Variable** (Description in import notebook)\
 [1]"id"                      
@@ -24,7 +24,7 @@ there are 12 possible outcomes of the destination country: 'US'-USA, 'FR'-France
 [14]"first_device_type"       
 [15]"first_browser"          
 
-**Source**
+**Source**\
 The data is from Kaggle.
 
 Data source:https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings/data
