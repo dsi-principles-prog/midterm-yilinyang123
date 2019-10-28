@@ -4,10 +4,10 @@
 
 All the users in this dataset are from the USA.
 
-**Target Variable** - "country_destination"
+**Target Variable** - "country_destination"\
 there are 12 possible outcomes of the destination country: 'US'-USA, 'FR'-France, 'CA'-Canada, 'GB'-Great Britain, 'ES'-Spain, 'IT'-Italy, 'PT'-Portugal, 'NL'-Netherlands,'DE'-Denmark, 'AU'-Australia, 'NDF' (no destination found), and 'other'. 
 
-**Predictor Variable** (Description in import notebook)
+**Predictor Variable** (Description in import notebook)\
 [1]"id"                      
 [2]"date_account_created"    
 [3]"timestamp_first_active"  
