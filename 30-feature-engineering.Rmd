@@ -50,7 +50,13 @@ output: 1(variable is not NA); 0(variable is NA)
 
 ```{r function3}
 booking_record <- function (df,var) {
-  
+    df %>% 
+    mutate(booking_or_not=case_when(
+      is.na({{var}})~0,
+      T~1
+    )) %>% 
+    select({{var}},booking_or_not,everything()) %>% 
+    assert(in_set(0,1),booking_or_not)
 }
 
 ```
@@ -66,6 +72,7 @@ output: the day of the week of the variable
 
 ```{r function4}
 day_of_week <-function(df,var){
+
  
 }
 

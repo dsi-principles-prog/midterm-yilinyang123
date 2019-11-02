@@ -9,9 +9,9 @@ output: html_notebook
 dest_prepare <- dest %>% 
   calc_month(date_first_booking) %>%
   age_dummy(age) %>% 
-  #booking_record(date_first_booking) %>%
+  booking_record(date_first_booking) %>%
   #day_of_week(date_first_booking) %>%
-  select(country_destination,id,month,age_under_40,gender,signup_method,language,first_browser)
+  select(booking_or_not,country_destination,id,month,age_under_40,gender,signup_method,language,first_browser)
 
 dest_prepare
 
@@ -32,7 +32,8 @@ dest_prepare %>%
 ```
 
 ```{r test function3}
-
+dest_prepare %>% 
+  assert(in_set(0,1),booking_or_not)
 ```
 
 
